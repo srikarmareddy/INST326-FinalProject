@@ -1,1 +1,1 @@
-Print("Nick can use Git")
+print("Nick can use Git")
