@@ -42,15 +42,28 @@ class Player:
         """
 
 class Questions:
-    """
+    """Reads in the questions from the given file
+
+        Attributes:
+            questions(dict): a dictionary where keys are questions and values are answers
+            filename(str): name of the file
     """
     
-    def __init__(self, path):
-        """
+    def __init__(self, filename):
+        """Initiailzes the dictionary of questions
+
+            Args:
+                filename(str): name of the file
+            
+            Side effects:
+                reads the given file and puts the data into the questions dictionary
         """
     
     def selectQuestion(self):
-       """
+       """Selects a random question to ask the player
+
+        Returns:
+            returns a tuple with the question and the answer
        """ 
 
 def main():  
