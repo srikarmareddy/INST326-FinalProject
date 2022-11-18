@@ -39,6 +39,12 @@ class Player:
     
     def resetScore(self, name):
         """
+        If user enters a new name, reset the score to the default value
+        
+        Args: name (string): takes the name of a player, new or existing
+        
+        Side effects: resets the value of self.score to the default value, if a
+                     new name is given
         """
 
 class Questions:
@@ -66,12 +72,27 @@ class Questions:
             returns a tuple with the question and the answer
        """ 
 
-def main():  
+def main(name, filepath):  
     """
+    Starts and hosts a new trivia game
+    
+    Args:
+        name (string): name of the player
+        filepath (string): string containing a filepath to questions and answers
+        
+    Side effects: prints the player's current score and high score to stdout
     """
 
 def parseargs(arglist):
     """
+    Parses through command-line arguments
+    
+    Args:
+         arglist (list): a list of command-line arguments
+         
+    Returns: parsed arguments, as a namespace
     """
-
+    
 if __name__ == "__main__":
+    args = parseargs(sys.argv[1:])
+    main(args.filepath, args.name)
