@@ -21,6 +21,9 @@ class Player:
             Side Effects:
                 Sets all attributes for the Player class
         """
+
+        self.name = name
+        self.score = score
         
     def getScore(self):
         """ Return the current score of the player
@@ -28,6 +31,8 @@ class Player:
             Returns:
                 Return the current highscore for the player
         """
+
+        return self.score
     
     def updateScore(self):
         """ Update the player score
@@ -36,10 +41,17 @@ class Player:
                 Compares current highscore to most recent score and updates
                 the highscore.
         """
+
+        self.score += 1
     
-    def resetScore(self, name):
+    def resetScore(self):
+        """Resets the player's score to zero
+
+            Side Effect:
+                the attribute score is set to zero
         """
-        """
+
+        self.score = 0
 
 class Questions:
     """Reads in the questions from the given file
