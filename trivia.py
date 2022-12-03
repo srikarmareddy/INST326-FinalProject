@@ -95,6 +95,13 @@ def parseargs(arglist):
          
     Returns: parsed arguments, as a namespace
     """
+
+    parser = ArgumentParser()
+    parser.add_argument("filepath", type=str,help="Path to the json file")
+    parser.add_argument("name1", type=str, help="name of the person compete in the triva")
+
+    args = parser.parse_args(arglist)
+    return args
     
 if __name__ == "__main__":
     args = parseargs(sys.argv[1:])
