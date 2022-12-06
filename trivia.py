@@ -14,7 +14,7 @@ class Player:
             score (int) - Current score of the player.
     """
     
-    def __init__(self, name, score):
+    def __init__(self, name, score = 0):
         """ Initalizes the player object
 
             Args:
@@ -79,8 +79,11 @@ class Questions:
         Returns:
             returns a tuple with the question and the answer
        """
-
-
+       question = random.choice(list(self.questions)) 
+       answer = self.questions[question]
+       del self.questions[question]
+       tuple_return = (question, answer)
+       return tuple_return
 
 def main(name, filepath):  
     """
