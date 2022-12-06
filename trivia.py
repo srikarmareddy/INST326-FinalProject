@@ -1,8 +1,10 @@
 """Run a UMD trivia game with one player.
 """
-import ArgumentParser
+from argparse import ArgumentParser
+import json
 import pandas
 import sys
+import random
 
 class Player:
     """Creates a Player object.
@@ -55,7 +57,6 @@ class Questions:
 
         Attributes:
             questions(dict): a dictionary where keys are questions and values are answers
-            filename(str): name of the file
     """
     
     def __init__(self, filename):
@@ -67,13 +68,19 @@ class Questions:
             Side effects:
                 reads the given file and puts the data into the questions dictionary
         """
+
+        with open(filename, "r ", encoding="utf-8") as f:
+            questiondata = json.load(f)
+            self.questions = questiondata['questions']
     
     def selectQuestion(self):
        """Selects a random question to ask the player
 
         Returns:
             returns a tuple with the question and the answer
-       """ 
+       """
+
+
 
 def main(name, filepath):  
     """
