@@ -108,7 +108,7 @@ def main(filepath, name):
             player1.updateScore()
             print("Correct!")
         else:
-            print(f"Incorrect! The Answer was \n{q[1]}")   
+            print(f"Incorrect! The Answer is {q[1]}")   
         length-=1
         print(f"Current Score: {player1.getScore()}")
     print(f"{name} scored {player1.getScore()} points")
