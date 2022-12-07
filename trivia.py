@@ -33,8 +33,9 @@ class Player:
             Returns:
                 Return the current highscore for the player
         """
-
-        return self.score
+        to_return = self.score
+        return to_return
+    
     
     def updateScore(self):
         """ Update the player score
@@ -69,7 +70,7 @@ class Questions:
                 reads the given file and puts the data into the questions dictionary
         """
 
-        with open(filename, "r ", encoding="utf-8") as f:
+        with open(filename, "r", encoding="utf-8") as f:
             questiondata = json.load(f)
             self.questions = questiondata['questions']
     
@@ -85,7 +86,7 @@ class Questions:
        tuple_return = (question, answer)
        return tuple_return
 
-def main(name, filepath):  
+def main(filepath, name):  
     """
     Starts and hosts a new trivia game
     
@@ -98,8 +99,8 @@ def main(name, filepath):
 
     trivia_questions = Questions(filepath)
     player1 = Player(name)
-    length = len(trivia_questions)
-    for x in length:
+    length = len(trivia_questions.questions)
+    while length != 0:
         q = trivia_questions.selectQuestion()
         print(q[0])
         response = input("What is your answer? ")
@@ -108,7 +109,9 @@ def main(name, filepath):
             print("Correct!")
         else:
             print("Incorrect!")   
-    print(f"{name} scored {player1.getScore} points")
+        length-=1
+    print(f"{name} scored {player1.getScore()} points")
+    
 
 def parseargs(arglist):
     """
@@ -122,7 +125,7 @@ def parseargs(arglist):
 
     parser = ArgumentParser()
     parser.add_argument("filepath", type=str,help="Path to the json file")
-    parser.add_argument("name1", type=str, help="name of the person compete in the triva")
+    parser.add_argument("name", type=str, help="name of the person compete in the triva")
 
     args = parser.parse_args(arglist)
     return args
