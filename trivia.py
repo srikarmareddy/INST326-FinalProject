@@ -95,11 +95,20 @@ def main(name, filepath):
         
     Side effects: prints the player's current score and high score to stdout
     """
-    with open(filepath, "r", encoding="utf-8") as f:
-        triviadata = json.load(f)
-        trivia_questions = Questions(triviadata)
-        player1 = Player(name)
-        print(f"{name} scored {player1.getScore} points")
+
+    trivia_questions = Questions(filepath)
+    player1 = Player(name)
+    length = len(trivia_questions)
+    for x in length:
+        q = trivia_questions.selectQuestion()
+        print(q[0])
+        response = input("What is your answer? ")
+        if q[1] == response:
+            player1.updateScore()
+            print("Correct!")
+        else:
+            print("Incorrect!")   
+    print(f"{name} scored {player1.getScore} points")
 
 def parseargs(arglist):
     """
