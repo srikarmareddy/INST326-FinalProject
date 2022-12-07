@@ -110,6 +110,7 @@ def main(filepath, name):
         else:
             print("Incorrect!")   
         length-=1
+        print(f"Current Score: {player1.getScore()}")
     print(f"{name} scored {player1.getScore()} points")
     
 
