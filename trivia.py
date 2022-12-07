@@ -95,6 +95,8 @@ def main(name, filepath):
         
     Side effects: prints the player's current score and high score to stdout
     """
+    player1 = Player(name)
+    print(f"{name} scored {player1.getScore} points!")
 
 def parseargs(arglist):
     """
