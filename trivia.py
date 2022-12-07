@@ -107,7 +107,7 @@ def main(name, filepath):
             player1.updateScore()
             print("Correct!")
         else:
-            print("Incorrect!")   
+            print("Incorrect!")  
     print(f"{name} scored {player1.getScore} points")
 
 def parseargs(arglist):
