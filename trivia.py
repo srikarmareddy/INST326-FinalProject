@@ -2,9 +2,11 @@
 """
 from argparse import ArgumentParser
 import json
-import pandas
+import pandas as pd
 import sys
 import random
+import matplotlib.pyplot as plt
+
 
 class Player:
     """Creates a Player object.
@@ -112,7 +114,17 @@ def main(filepath, name):
         length-=1
         print(f"Current Score: {player1.getScore()}")
     print(f"{name} scored {player1.getScore()} points")
-    
+    print("")
+
+    df = pd.read_csv('trivia.csv')
+    highscore = df.sort_values('score', ascending = False)
+    print(highscore)
+
+    plt.bar(df["name"], df["score"], data = df)
+    plt.title("highscore", fontsize = 14)
+    plt.xlabel('Name', fontsize = 14)
+    plt.ylabel('Score', fontsize = 14)
+    plt.show()
 
 def parseargs(arglist):
     """
