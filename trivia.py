@@ -121,7 +121,7 @@ def main(filepath, name):
         q = trivia_questions.selectQuestion()
         print(q[0])
         response = input("What is your answer? ")
-        player1.updateScore() if q[1] == response else print(f"Incorrect! The Answer is {q[1]}.") 
+        player1.updateScore() if q[1].lower() == response.lower() else print(f"Incorrect! The Answer is {q[1]}.") 
         length-=1
         print(f"Current Score: {player1.getScore()}")
     print(f"{name} scored {player1.getScore()} points")
