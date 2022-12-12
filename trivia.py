@@ -50,10 +50,24 @@ class Player:
         self.score += 1
         print("Correct!")
     def resetScore(self, name):
-        """
+        """ Resets the player score
+        
+            Side Effect:
+                Sets the score back to 0.
         """
 
         self.score = 0
+        
+    def __repr__(self):
+        """ Produce a formal string representation of the Player class.
+        
+            The formal representation will have the form "Player(name, score)" 
+            with name being the player name and score being their score.
+            
+            Return:
+                str: the string representation. 
+        """
+        return f"Player({self.name}, {self.score})"
 
 class Questions:
     """Reads in the questions from the given file
