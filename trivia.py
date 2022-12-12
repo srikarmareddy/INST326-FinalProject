@@ -16,7 +16,7 @@ class Player:
             score (int) - Current score of the player.
     """
     
-    def __init__(self, name, score = 0):
+    def __init__(self, name = "Bob", score = 0):
         """ Initalizes the player object
 
             Args:
