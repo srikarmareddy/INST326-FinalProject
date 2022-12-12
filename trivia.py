@@ -1,4 +1,6 @@
-"""Run a UMD trivia game with one player.
+"""Runs a UMD trivia game with questions from a given json file.
+
+Note:Nick Wrote the JSON file
 """
 from argparse import ArgumentParser
 import json
@@ -9,7 +11,8 @@ import matplotlib.pyplot as plt
 
 
 class Player:
-    """Creates a Player object.
+    """Creates a Player object. David/Eli wrote this class, David is responsible
+    for creating the optional parameters and the magic method. Eli wrote the rest.
     
         Attributes:
             name (string) - Name of the player.
@@ -70,7 +73,7 @@ class Player:
         return f"Player({self.name}, {self.score})"
 
 class Questions:
-    """Reads in the questions from the given file
+    """Reads in the questions from the given file. Eli wrote this entire class
 
         Attributes:
             questions(dict): a dictionary where keys are questions and values are answers
@@ -105,7 +108,8 @@ class Questions:
 def main(filepath, name):  
     """
     Starts and hosts a new trivia game
-    Srikar Mareddy techniques
+    Srikar Mareddy wrote this function up to the pandas part, 
+    Nick wrote the pandas section.
     
     Args:
         name (string): name of the player
@@ -132,6 +136,7 @@ def main(filepath, name):
     print(f"{name} scored {player1.getScore()} points")
     print("")
 
+    #Nick is responible for the code below, Srikar is responsible for the code above
     df = pd.read_csv('trivia.csv')
     highscore = df.sort_values('score', ascending = False)
     print(highscore)
@@ -145,6 +150,7 @@ def main(filepath, name):
 def parseargs(arglist):
     """
     Parses through command-line arguments
+    Eli wrote this section
     
     Args:
          arglist (list): a list of command-line arguments
