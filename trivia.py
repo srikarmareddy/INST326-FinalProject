@@ -48,7 +48,7 @@ class Player:
         """
 
         self.score += 1
-    
+        print("Correct!")
     def resetScore(self, name):
         """
         """
@@ -91,6 +91,7 @@ class Questions:
 def main(filepath, name):  
     """
     Starts and hosts a new trivia game
+    Srikar Mareddy techniques
     
     Args:
         name (string): name of the player
@@ -106,11 +107,7 @@ def main(filepath, name):
         q = trivia_questions.selectQuestion()
         print(q[0])
         response = input("What is your answer? ")
-        if q[1] == response:
-            player1.updateScore()
-            print("Correct!")
-        else:
-            print(f"Incorrect! The Answer is {q[1]}.")   
+        player1.updateScore() if q[1] == response else print(f"Incorrect! The Answer is {q[1]}.") 
         length-=1
         print(f"Current Score: {player1.getScore()}")
     print(f"{name} scored {player1.getScore()} points")
