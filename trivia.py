@@ -74,6 +74,7 @@ class Player:
 
 class Questions:
     """Reads in the questions from the given file. Eli wrote this entire class
+    including the with statement.
 
         Attributes:
             questions(dict): a dictionary where keys are questions and values are answers
@@ -108,7 +109,8 @@ class Questions:
 def main(filepath, name):  
     """
     Starts and hosts a new trivia game
-    Srikar Mareddy wrote this function up to the pandas part, 
+    Srikar Mareddy wrote this function up to the pandas part, which includes
+    f strings and a conditional expression. 
     Nick wrote the pandas section.
     
     Args:
