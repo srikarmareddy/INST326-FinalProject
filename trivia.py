@@ -121,6 +121,11 @@ def main(filepath, name):
         q = trivia_questions.selectQuestion()
         print(q[0])
         response = input("What is your answer? ")
+
+        if(response.lower() == "quit"):
+            print(f"Current Score: {player1.getScore()}")
+            break
+
         player1.updateScore() if q[1].lower() == response.lower() else print(f"Incorrect! The Answer is {q[1]}.") 
         length-=1
         print(f"Current Score: {player1.getScore()}")
